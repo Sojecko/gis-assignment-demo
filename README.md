@@ -63,8 +63,32 @@ There are only few important code files:
 - `app/controllers/supermarkets_controller.rb` - which represents the `/supermarkets.json` API - it runs the database queries and generates the JSON response.
 - `app/models/supermarket.rb` - contains the SQL query which pulls the supermarket data from the dabase.
 
+The frontend client is using MapBox JavaScript SDK to implement the underlying map, and the [jQuery](https://jquery.com/) library for [easier XHR requests](https://api.jquery.com/jquery.get/) and DOM manipulation.
+
 
 ## Useful links
 
 - [MapBox JavaScript SDK documentation](https://docs.mapbox.com/mapbox-gl-js/api/)
 - [MapBox JavaScript SDK examples](https://docs.mapbox.com/mapbox-gl-js/examples/)
+
+## Running the project
+
+You will need [ruby](https://www.ruby-lang.org/en/). You can usually install it via your distribution's package manager on Linux, or use a [RubyInstaller](https://rubyinstaller.org/) on Windows. Change to the project directory and run `bundle` to install dependencies.
+
+```
+bundle
+```
+
+You may need to install `libpq-dev` first to enable native PostgreSQL bindings, e.g.
+
+```
+sudo apt install libpq-dev
+```
+
+If the `bundle` commmand completes successfully, start the development server via `rails s` command.
+
+```
+rails s
+```
+
+The application should be accessible via [http://localhost:3000](http://localhost:3000)
